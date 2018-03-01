@@ -1,56 +1,85 @@
-  <div class="entries">
-    <h1>1 Welcome to Sonic Pi</h1>
-    <div class="content hidden">
-      <h3>Welcome friend :-)</h3>
-      <p>
-Welcome to Sonic Pi. Hopefully you're as excited to get started making crazy sounds as I am to show you. It's going to be a really fun ride where you'll learn all about music, synthesis, programming, composition, performance and more.<br><br>
+<div class="entries">
+  <h1>1 Welcome to Sonic Pi</h1>
+  <div class="content hidden">
+<h2>Welcome friend :-)</h2>
 
-But wait, how rude of me! Let me introduce myself - I'm Sam Aaron - the chap that created Sonic Pi. You can find me at @samaaron on Twitter and I'd be more than happy to say hello to you. You might also be interested in finding out more about my Live Coding Performances where I code with Sonic Pi live in front of audiences.<br><br>
+<p>Welcome to Sonic Pi. Hopefully you're as excited to get started making
+crazy sounds as I am to show you. It's going to be a really <em>fun</em> ride
+where you'll learn all about music, synthesis, programming, composition,
+performance and more.</p>
 
-If you have any thoughts, or ideas for improving Sonic Pi - please pass them on - feedback is so helpful. You never know, your idea might be the next big feature!<br><br>
+<p>But wait, how rude of me! Let me introduce myself - I'm
+<a href="http://twitter.com/samaaron">Sam Aaron</a> - the chap that created Sonic
+Pi. You can find me at <a href="http://twitter.com/samaaron">@samaaron</a> on
+Twitter and I'd be more than happy to say hello to you.  You might also
+be interested in finding out more about my
+<a href="http://facebook.com/livecodersamaaron">Live Coding Performances</a> where
+I code with Sonic Pi live in front of audiences.</p>
 
-This tutorial is divided up into sections grouped by category. Whilst I've written it to have an easy learning progression from start to finish, feel very free just to dip in and out of sections as you see fit. If you feel that there's something missing, do let me know and I'll consider it for a future version.<br><br>
+<p>If you have any thoughts, or ideas for improving Sonic Pi - please pass
+them on - feedback is so helpful. You never know, your idea might be the
+next big feature!</p>
 
-Finally, watching others live code is a really great way to learn. I regularly stream live on http://youtube.com/samaaron so please do drop by, say hi and ask me lots of questions :-)<br><br>
+<p>This tutorial is divided up into sections grouped by category. Whilst
+I've written it to have an easy learning progression from start to
+finish, feel very free just to dip in and out of sections as you see
+fit. If you feel that there's something missing, do let me know and I'll
+consider it for a future version.</p>
 
-OK, let's get started...
-    </p>
+<p>Finally, watching others live code is a really great way to learn. I
+regularly stream live on
+<a href="http://youtube.com/samaaron">http://youtube.com/samaaron</a> so please do
+drop by, say hi and ask me lots of questions :-)</p>
+
+<p>OK, let's get started...</p>
   </div>
 </div>
 
 <div class="entries">
   <h1>1.1 Live Coding</h1>
-
   <div class="content hidden">
 <h2>Live Coding</h2>
 
-<p>One of the most exciting aspects of Sonic Pi is that it enables you to write and modify code live to make music, just like you might perform live with a guitar. This means that given some practice you can take Sonic Pi on stage and gig with it.
+<p>One of the most exciting aspects of Sonic Pi is that it enables you to
+write and <em>modify code live</em> to make music, just like you might perform
+live with a guitar. This means that given some practice you can take
+Sonic Pi on stage and gig with it.</p>
+
 <h3>Free your mind</h3>
-<p>
-Before we get into the real details of how Sonic Pi works in the rest of this tutorial, I'd like to give you an experience of what it's like to live code. Don't worry if you don't understand much (or any) of this. Just try to hold onto your seats and enjoy...
-</p>
+
+<p>Before we get into the real details of how Sonic Pi works in the rest of
+this tutorial, I'd like to give you an experience of what it's like to
+live code. Don't worry if you don't understand much (or any) of
+this. Just try to hold onto your seats and enjoy...</p>
+
 <h3>A live loop</h3>
-<p>
-Let's get started, copy the following code into an empty buffer above:
-</p>
+
+<p>Let's get started, copy the following code into an empty buffer above:</p>
+
 <code><pre>
 live_loop :flibble do
   sample :bd_haus, rate: 1
   sleep 0.5
 end
 </pre></code>
-<p>
-Now, press the Run button and you'll hear a nice fast bass drum beating away. If at any time you wish to stop the sound just hit the Stop button. Although don't hit it just yet... Instead, follow these steps:<br><br>
 
-    Make sure the bass drum sound is still running<br>
-    Change the sleep value from 0.5 to something higher like 1.<br>
-    Press the Run button again<br>
-    Notice how the drum speed has changed.<br>
-    Finally, remember this moment, this is the first time you've live coded with Sonic Pi and it's unlikely to be your last...
-</p>
-<p>
-Ok, that was simple enough. Let's add something else into the mix. Above sample :bd_haus add the line sample :ambi_choir, rate: 0.3. Your code should look like this:
-</p>
+<p>Now, press the <code>Run</code> button and you'll hear a nice fast bass drum
+beating away. If at any time you wish to stop the sound just hit the
+<code>Stop</code> button. Although don't hit it just yet... Instead, follow these steps:</p>
+
+<ol>
+<li>Make sure the bass drum sound is still running</li>
+<li>Change the <code>sleep</code> value from <code>0.5</code> to something higher like <code>1</code>.</li>
+<li>Press the <code>Run</code> button again</li>
+<li>Notice how the drum speed has changed.</li>
+<li>Finally, <em>remember this moment</em>, this is the first time you've live
+coded with Sonic Pi and it's unlikely to be your last...</li>
+</ol>
+
+<p>Ok, that was simple enough. Let's add something else into the mix. Above
+<code>sample :bd_haus</code> add the line <code>sample :ambi_choir, rate: 0.3</code>. Your
+code should look like this:</p>
+
 <code><pre>
 live_loop :flibble do
   sample :ambi_choir, rate: 0.3
@@ -58,38 +87,59 @@ live_loop :flibble do
   sleep 1
 end
 </pre></code>
-<p>
-Now, play around. Change the rates - what happens when you use high values, or small values or negative values? See what happens when you change the rate: value for the :ambi_choir sample just slightly (say to 0.29). What happens if you choose a really small sleep value? See if you can make it go so fast your computer will stop with an error because it can't keep up (if that happens, just choose a bigger sleep time and hit Run again).<br><br>
 
-Try commenting one of the sample lines out by adding a # to the beginning:
-</p>
+<p>Now, play around. Change the rates - what happens when you use high
+values, or small values or negative values? See what happens when you
+change the <code>rate:</code> value for the <code>:ambi_choir</code> sample just slightly (say
+to <code>0.29</code>). What happens if you choose a really small <code>sleep</code> value? See
+if you can make it go so fast your computer will stop with an error
+because it can't keep up (if that happens, just choose a bigger <code>sleep</code>
+time and hit <code>Run</code> again).</p>
+
+<p>Try commenting one of the <code>sample</code> lines out by adding a <code>#</code> to the
+beginning:</p>
+
 <code><pre>
 live_loop :flibble do
   sample :ambi_choir, rate: 0.3
-#  sample :bd_haus, rate: 1
+  sample :bd_haus, rate: 1
   sleep 1
-end
+  end
 </pre></code>
-<p>
-Notice how it tells the computer to ignore it, so we don't hear it. This is called a comment. In Sonic Pi we can use comments to remove and add things into the mix.
-</p>
-<p>
-Finally, let me leave you something fun to play with. Take the code below, and copy it into a spare buffer. Now, don't try to understand it too much other than see that there are two loops - so two things going round at the same time. Now, do what you do best - experiment and play around. Here are some suggestions:<br><br>
 
-    Try changing the blue rate: values to hear the sample sound change.<br>
-    Try changing the sleep times and hear that both loops can spin round at different rates.<br>
-    Try uncommenting the sample line (remove the #) and enjoy the sound of the guitar played backwards.<br>
-    Try changing any of the blue mix: values to numbers between 0 (not in the mix) and 1 (fully in the mix).<br>
+<p>Notice how it tells the computer to ignore it, so we don't hear it. This
+is called a comment. In Sonic Pi we can use comments to remove and add
+things into the mix.</p>
 
-Remember to press Run and you'll hear the change next time the loop goes round. If you end up in a pickle, don't worry - hit Stop, delete the code in the buffer and paste a fresh copy in and you're ready to jam again. Making mistakes is how you'll learn the quickest...
-</p>
+<p>Finally, let me leave you something fun to play with. Take the code below,
+and copy it into a spare buffer. Now, don't try to understand it too
+much other than see that there are two loops - so two things going round
+at the same time. Now, do what you do best - experiment and play
+around. Here are some suggestions:</p>
+
+<ul>
+<li>Try changing the blue <code>rate:</code> values to hear the sample sound change.</li>
+<li>Try changing the <code>sleep</code> times and hear that both loops can spin round
+at different rates.</li>
+<li>Try uncommenting the sample line (remove the <code>#</code>) and enjoy the sound
+of the guitar played backwards.</li>
+<li>Try changing any of the blue <code>mix:</code> values to numbers between <code>0</code> (not
+in the mix) and <code>1</code> (fully in the mix).</li>
+</ul>
+
+<p>Remember to press <code>Run</code> and you'll hear the change next time the loop
+goes round. If you end up in a pickle, don't worry - hit <code>Stop</code>, delete
+the code in the buffer and paste a fresh copy in and you're ready to
+jam again. Making mistakes is how you'll learn the quickest...</p>
+
 <code><pre>
 live_loop :guit do
   with_fx :echo, mix: 0.3, phase: 0.25 do
     sample :guit_em9, rate: 0.5
-  end
-#  sample :guit_em9, rate: -0.5
-  sleep 8
+end
+
+sample :guit_em9, rate: -0.5
+sleep 8
 end
 
 live_loop :boom do
@@ -99,10 +149,107 @@ live_loop :boom do
   sleep 8
 end
 </pre></code>
-<p>
-Now, keep playing and experimenting until your curiosity about how this all actually works kicks in and you start wondering what else you can do with this. You're now ready to read the rest of the tutorial.<br><br>
 
-So what are you waiting for...
-</p>
+<p>Now, keep playing and experimenting until your curiosity about how this
+all actually works kicks in and you start wondering what else you can do
+with this. You're now ready to read the rest of the tutorial.</p>
+
+<p>So what are you waiting for...</p>
+  </div>
+</div>
+
+<div class="entries">
+  <h1>1.2 Exploring the Interface</h1>
+
+  <div class="content hidden">
+<h2>The Sonic Pi Interface</h2>
+
+<p>Sonic Pi has a very simple interface for coding music. Let's spend a
+little time exploring it.</p>
+
+<p><img src="assets/GUI.png" title="the Interface..." /></p>
+
+<ul>
+<li><em>A</em> - Play Controls</li>
+<li><em>B</em> - Editor Controls</li>
+<li><em>C</em> - Info and Help</li>
+<li><em>D</em> - Code Editor</li>
+<li><em>E</em> - Prefs Panel</li>
+<li><em>F</em> - Log Viewer</li>
+<li><em>G</em> - Help System</li>
+<li><em>H</em> - Scope Viewer</li>
+</ul>
+
+<h3>A. Play Controls</h3>
+
+<p>These pink buttons are the main controls for starting and stopping
+sounds. There's the <em>Run</em> button for running the code in the editor,
+<em>Stop</em> for stopping all running code, <em>Save</em> for saving the code to an
+external file and <em>Record</em> to create a recording (a WAV file) of the
+sound playing.</p>
+
+<h3>B. Editor Controls</h3>
+
+<p>These orange buttons allow you to manipulate the code editor. The <em>Size
++</em> and <em>Size -</em> buttons allow you to make the text bigger and
+smaller.</p>
+
+<h3>C. Info and Help</h3>
+
+<p>These blue buttons give you access to information, help and
+preferences. The <em>Info</em> button will open up the information window which
+contains information about Sonic Pi itself - the core team, history,
+contributors and community. The <em>Help</em> button toggles the help system
+(<em>G</em>) and the <em>Prefs</em> button toggles the preferences window which allows
+you to control some basic system parameters.</p>
+
+<h3>D. Code Editor</h3>
+
+<p>This is the area where you'll write your code and compose/perform
+music. It's a simple text editor where you can write code, delete it,
+cut and paste, etc. Think of it like a very basic version of Word or
+Google Docs. The editor will automatically colour words based on their
+meaning in the code. This may seem strange at first, but you'll soon
+find it very useful. For example, you'll know something is a number
+because it is blue.</p>
+
+<h3>E. Prefs Panel</h3>
+
+<p>Sonic Pi supports a number of tweakable preferences which can be
+accessed by toggling the <em>prefs</em> button in the Info and Help button
+set. This will toggle the visibility of the Prefs Panel which includes a
+number of options to be changed. Examples are forcing mono mode,
+inverting stereo, toggling log output verbosity and also a volume slider
+and audio selector on the Raspberry Pi.</p>
+
+<h3>F. Log Viewer</h3>
+
+<p>When you run your code, information about what the program is doing will
+be displayed in the log viewer. By default, you'll see a message for
+every sound you create with the exact time the sound was triggered. This
+is very useful for debugging your code and understanding what your code
+is doing.</p>
+
+<h3>G. Help System</h3>
+
+<p>One of the most important parts of the Sonic Pi interface is
+the help system which appears at the bottom of the window. This can be
+toggled on and off by clicking on the blue <em>Help</em> button. The help
+system contains help and information about all aspects of Sonic Pi
+including this tutorial, a list of available synths, samples, examples,
+FX and a full list of all the functions Sonic Pi provides for coding
+music.</p>
+
+<h3>H. Scope Viewer</h3>
+
+<p>The scope viewer allows you to see the sound you're hearing. You can
+easily see that the saw wave looks like a saw and that the basic beep is
+a curvey sine wave. You can also see the difference between loud and
+quiet sounds by the size of the lines. There are 3 scopes to play with -
+the default is a combined scope for the left and right channels, there
+is a stereo scope which draws a separate scope for each channel. Finally
+there is a Lissajous curve scope which will show the phase relationship
+between the left and right channels and allows you to draw pretty
+pictures with sound (https://en.wikipedia.org/wiki/Lissajous_curve).</p>
   </div>
 </div>

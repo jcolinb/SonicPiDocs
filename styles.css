@@ -32,13 +32,18 @@ h1 {
 }
 
 code {
-  text-align: left;
-}
-
-pre {
   padding: 5px 10px 5px 10px;
   display: inline-block;
   font-size: 1.7;
   color: #b3b3b3;
   background-color: #fafafa;
+  text-align: left;
+}
+
+pre {
+
+}
+
+li {
+  list-style-type: none;
 }
