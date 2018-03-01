@@ -1,0 +1,108 @@
+  <div class="entries">
+    <h1>1 Welcome to Sonic Pi</h1>
+    <div class="content hidden">
+      <h3>Welcome friend :-)</h3>
+      <p>
+Welcome to Sonic Pi. Hopefully you're as excited to get started making crazy sounds as I am to show you. It's going to be a really fun ride where you'll learn all about music, synthesis, programming, composition, performance and more.<br><br>
+
+But wait, how rude of me! Let me introduce myself - I'm Sam Aaron - the chap that created Sonic Pi. You can find me at @samaaron on Twitter and I'd be more than happy to say hello to you. You might also be interested in finding out more about my Live Coding Performances where I code with Sonic Pi live in front of audiences.<br><br>
+
+If you have any thoughts, or ideas for improving Sonic Pi - please pass them on - feedback is so helpful. You never know, your idea might be the next big feature!<br><br>
+
+This tutorial is divided up into sections grouped by category. Whilst I've written it to have an easy learning progression from start to finish, feel very free just to dip in and out of sections as you see fit. If you feel that there's something missing, do let me know and I'll consider it for a future version.<br><br>
+
+Finally, watching others live code is a really great way to learn. I regularly stream live on http://youtube.com/samaaron so please do drop by, say hi and ask me lots of questions :-)<br><br>
+
+OK, let's get started...
+    </p>
+  </div>
+</div>
+
+<div class="entries">
+  <h1>1.1 Live Coding</h1>
+
+  <div class="content hidden">
+<h2>Live Coding</h2>
+
+<p>One of the most exciting aspects of Sonic Pi is that it enables you to write and modify code live to make music, just like you might perform live with a guitar. This means that given some practice you can take Sonic Pi on stage and gig with it.
+<h3>Free your mind</h3>
+<p>
+Before we get into the real details of how Sonic Pi works in the rest of this tutorial, I'd like to give you an experience of what it's like to live code. Don't worry if you don't understand much (or any) of this. Just try to hold onto your seats and enjoy...
+</p>
+<h3>A live loop</h3>
+<p>
+Let's get started, copy the following code into an empty buffer above:
+</p>
+<code><pre>
+live_loop :flibble do
+  sample :bd_haus, rate: 1
+  sleep 0.5
+end
+</pre></code>
+<p>
+Now, press the Run button and you'll hear a nice fast bass drum beating away. If at any time you wish to stop the sound just hit the Stop button. Although don't hit it just yet... Instead, follow these steps:<br><br>
+
+    Make sure the bass drum sound is still running<br>
+    Change the sleep value from 0.5 to something higher like 1.<br>
+    Press the Run button again<br>
+    Notice how the drum speed has changed.<br>
+    Finally, remember this moment, this is the first time you've live coded with Sonic Pi and it's unlikely to be your last...
+</p>
+<p>
+Ok, that was simple enough. Let's add something else into the mix. Above sample :bd_haus add the line sample :ambi_choir, rate: 0.3. Your code should look like this:
+</p>
+<code><pre>
+live_loop :flibble do
+  sample :ambi_choir, rate: 0.3
+  sample :bd_haus, rate: 1
+  sleep 1
+end
+</pre></code>
+<p>
+Now, play around. Change the rates - what happens when you use high values, or small values or negative values? See what happens when you change the rate: value for the :ambi_choir sample just slightly (say to 0.29). What happens if you choose a really small sleep value? See if you can make it go so fast your computer will stop with an error because it can't keep up (if that happens, just choose a bigger sleep time and hit Run again).<br><br>
+
+Try commenting one of the sample lines out by adding a # to the beginning:
+</p>
+<code><pre>
+live_loop :flibble do
+  sample :ambi_choir, rate: 0.3
+#  sample :bd_haus, rate: 1
+  sleep 1
+end
+</pre></code>
+<p>
+Notice how it tells the computer to ignore it, so we don't hear it. This is called a comment. In Sonic Pi we can use comments to remove and add things into the mix.
+</p>
+<p>
+Finally, let me leave you something fun to play with. Take the code below, and copy it into a spare buffer. Now, don't try to understand it too much other than see that there are two loops - so two things going round at the same time. Now, do what you do best - experiment and play around. Here are some suggestions:<br><br>
+
+    Try changing the blue rate: values to hear the sample sound change.<br>
+    Try changing the sleep times and hear that both loops can spin round at different rates.<br>
+    Try uncommenting the sample line (remove the #) and enjoy the sound of the guitar played backwards.<br>
+    Try changing any of the blue mix: values to numbers between 0 (not in the mix) and 1 (fully in the mix).<br>
+
+Remember to press Run and you'll hear the change next time the loop goes round. If you end up in a pickle, don't worry - hit Stop, delete the code in the buffer and paste a fresh copy in and you're ready to jam again. Making mistakes is how you'll learn the quickest...
+</p>
+<code><pre>
+live_loop :guit do
+  with_fx :echo, mix: 0.3, phase: 0.25 do
+    sample :guit_em9, rate: 0.5
+  end
+#  sample :guit_em9, rate: -0.5
+  sleep 8
+end
+
+live_loop :boom do
+  with_fx :reverb, room: 1 do
+    sample :bd_boom, amp: 10, rate: 1
+  end
+  sleep 8
+end
+</pre></code>
+<p>
+Now, keep playing and experimenting until your curiosity about how this all actually works kicks in and you start wondering what else you can do with this. You're now ready to read the rest of the tutorial.<br><br>
+
+So what are you waiting for...
+</p>
+  </div>
+</div>
