@@ -56,12 +56,12 @@ this. Just try to hold onto your seats and enjoy...</p>
 
 <p>Let's get started, copy the following code into an empty buffer above:</p>
 
-<code><pre>
+<span><code><pre>
 live_loop :flibble do
   sample :bd_haus, rate: 1
   sleep 0.5
 end
-</pre></code>
+</pre></code></span>
 
 <p>Now, press the <code>Run</code> button and you'll hear a nice fast bass drum
 beating away. If at any time you wish to stop the sound just hit the
@@ -80,13 +80,13 @@ coded with Sonic Pi and it's unlikely to be your last...</li>
 <code>sample :bd_haus</code> add the line <code>sample :ambi_choir, rate: 0.3</code>. Your
 code should look like this:</p>
 
-<code><pre>
+<span><code><pre>
 live_loop :flibble do
   sample :ambi_choir, rate: 0.3
   sample :bd_haus, rate: 1
   sleep 1
 end
-</pre></code>
+</pre></code></span>
 
 <p>Now, play around. Change the rates - what happens when you use high
 values, or small values or negative values? See what happens when you
@@ -99,13 +99,13 @@ time and hit <code>Run</code> again).</p>
 <p>Try commenting one of the <code>sample</code> lines out by adding a <code>#</code> to the
 beginning:</p>
 
-<code><pre>
+<span><code><pre>
 live_loop :flibble do
   sample :ambi_choir, rate: 0.3
   sample :bd_haus, rate: 1
   sleep 1
   end
-</pre></code>
+</pre></code></span>
 
 <p>Notice how it tells the computer to ignore it, so we don't hear it. This
 is called a comment. In Sonic Pi we can use comments to remove and add
@@ -132,7 +132,7 @@ goes round. If you end up in a pickle, don't worry - hit <code>Stop</code>, dele
 the code in the buffer and paste a fresh copy in and you're ready to
 jam again. Making mistakes is how you'll learn the quickest...</p>
 
-<code><pre>
+<span><code><pre>
 live_loop :guit do
   with_fx :echo, mix: 0.3, phase: 0.25 do
     sample :guit_em9, rate: 0.5
@@ -148,7 +148,7 @@ live_loop :boom do
   end
   sleep 8
 end
-</pre></code>
+</pre></code></span>
 
 <p>Now, keep playing and experimenting until your curiosity about how this
 all actually works kicks in and you start wondering what else you can do

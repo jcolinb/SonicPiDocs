@@ -1,5 +1,6 @@
 body {
   text-align: center;
+  font-size: 1.5em;
 }
 
 .entries {
@@ -15,9 +16,10 @@ body {
 }
 
 .content {
+  
   text-align: left;
   color: #000000;
-  margin: auto;
+  margin: 10px  auto;
   background-color: #ffffff;
   font-family: serif;
   padding: 20px;
@@ -32,18 +34,21 @@ h1 {
 }
 
 code {
-  padding: 5px 10px 5px 10px;
   display: inline-block;
-  font-size: 1.7;
   color: #b3b3b3;
   background-color: #fafafa;
   text-align: left;
 }
 
 pre {
-
+  padding: 5px 15px;
+  margin: 5px 40px;
 }
 
 li {
   list-style-type: none;
+}
+
+span {
+  font-size: 1.2em;
 }
