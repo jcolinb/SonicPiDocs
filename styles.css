@@ -3,7 +3,8 @@ body {
   font-size: 1.5em;
 }
 
-.entries {
+.entry,
+.header {
   margin: 20px auto;
   width: 85%;
   background-color: #acacac;
@@ -51,4 +52,9 @@ li {
 
 span {
   font-size: 1.2em;
+}
+
+#navbar {
+  position: fixed;
+  display: flex;
 }
