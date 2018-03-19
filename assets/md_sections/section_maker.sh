@@ -1,9 +1,10 @@
+touch sections.html
 rm sections.html
+i=(1)
 for file in *.md
 do
-touch entries.html
-rm entries.html
-printf "<div class='header'>\n\n" >> sections.html
+printf "<a href='#"$i"'><div class='header'>\n\n" >> sections.html
 markdown $file >> sections.html
-printf "</div>\n\n" >> sections.html
+printf "</div></a>\n\n" >> sections.html
+i=$((i+1))
 done

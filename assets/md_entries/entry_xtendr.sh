@@ -1,5 +1,3 @@
-touch make_entry.html
-rm make_entry.html
 printf "<div class="section">\n\n" >> make_entry.html
 for file in $1/*.md
 do
