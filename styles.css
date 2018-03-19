@@ -1,11 +1,13 @@
 body {
+  display: flex;
   text-align: center;
   font-size: 1.5em;
+  align-items: center;
+  flex-direction: column;
 }
 
-.entry,
-.header {
-  margin: 20px auto;
+.entry {
+  margin: 20px 10px;
   width: 85%;
   background-color: #acacac;
   font-family: sans;
@@ -14,6 +16,34 @@ body {
   box-sizing: border-box;
   border: 20px solid #acacac;
     border-radius: 10px;
+}
+
+.header {
+
+  flex: 1 1 auto;
+  margin: 5px;
+    width: 20%;
+  background-color: #acacac;
+  font-family: sans;
+  color: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 20px solid #acacac;
+    border-radius: 10px;
+}
+
+#info {
+
+  width: 80%;
+  text-align: left;
+  color: #000000;
+  background-color: #ffffff;
+  font-family: serif;
+
+}
+
+.info {
+  margin: 15px;
 }
 
 .content {
@@ -55,6 +85,7 @@ span {
 }
 
 #navbar {
-  position: fixed;
   display: flex;
+  flex-direction: row;
+  
 }
