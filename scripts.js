@@ -1,4 +1,4 @@
-$('#navbar').load('assets/entries.html .header');
+$('#navbar').load('assets/md_sections/sections.html .header');
 $('#container').load('assets/entries.html .section');
 
 $('#navbar').click('.header',function (event) {
